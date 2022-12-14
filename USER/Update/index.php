@@ -6,6 +6,8 @@ $user_name;
 $email;
 $phone;
 $avatar;
+$old_pass = "";
+$new_pass = "";
 $sql = "SELECT `ID`, `Name`, `UserName`, `Email`, `Password`, `Role`, `Phone`, `Avatar` FROM `user` WHERE `UserName` = '$user_name_cookie'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -117,9 +119,16 @@ if ($result->num_rows > 0) {
                         <td><input type="file" id="avatar" name="avatar" value="<?php echo $avatar ?>"></td>
                     </tr>
                     <tr>
+                        <td class="col1">Mật khẩu cũ :</td>
+                        <td><input type="text" id="old_pass" name="old_pass" value="<?php echo $old_pass ?>"></td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Mật khẩu mới :</td>
+                        <td><input type="text" id="new_pass" name="new_pass" value="<?php echo $new_pass ?>"></td>
+                    </tr>
+                    <tr>
                         <td colspan="2" align="center"><input type="submit" name="update" class="btn" value="Cập nhật"></td>
                     </tr>
-
                 </table>
 
             </form>

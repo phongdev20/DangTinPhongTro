@@ -1,14 +1,18 @@
 <?php
 include('../Components/ketnoi.php');
-$username = $_COOKIE["username"];
+$username = "";
+if ($_COOKIE && $_COOKIE["username"])
+    $username = $_COOKIE["username"];
 $name;
 $avatar;
-$sql = "SELECT * FROM `user` WHERE `UserName` = '$username'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $name = $row['Name'];
-        $avatar = $row['Avatar'];
+if ($username) {
+    $sql = "SELECT * FROM `user` WHERE `UserName` = '$username'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $name = $row['Name'];
+            $avatar = $row['Avatar'];
+        }
     }
 }
 ?>
@@ -76,10 +80,11 @@ if ($result->num_rows > 0) {
                 </ul>
             </div> -->
             <!-- Avatar -->
-            <div class="dropdown">
+            <?php if ($username) {
+                echo '<div class="dropdown">
                 <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                    <img src="../Uploads/User/<?php echo $username ?>/<?php echo $avatar ?>" class="rounded-circle" width="40" height="40" loading="lazy" />
-                    <p style="margin-top: 12px; margin-left: 6px;"><?php echo $name  ?></p>
+                    <img src="../Uploads/User/' . $username . '/' . $avatar . '" class="rounded-circle" width="40" height="40" loading="lazy" />
+                    <p style="margin-top: 12px; margin-left: 6px;">' . $name . '</p>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                     <li>
@@ -95,7 +100,12 @@ if ($result->num_rows > 0) {
                         <a class="dropdown-item" href="../Components/logout.php">Logout</a>
                     </li>
                 </ul>
-            </div>
+            </div>';
+            } else {
+                echo '<a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="../Auth/index.php" i>
+                    Đăng nhập
+                </a>';
+            } ?>
         </div>
         <!-- Right elements -->
     </div>

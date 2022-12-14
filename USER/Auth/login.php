@@ -7,19 +7,19 @@ if (isset($_POST['btn_submit'])) {
         $captcha = $_POST['g-recaptcha-response'];
     }
     if (!$captcha) {
-        echo '<script>alert("Xác thực không thành công"); window.location="index.php";</script>';
+        echo '<script>alert("Xác thực không thành công"); window.location="../Auth";</script>';
         exit;
     } else {
         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Le9mHYjAAAAANQhAQLv3QCN4JsHNeEcQbLrFLj6&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
         if ($response['success'] == false) {
-            echo '<script>alert("Xác thực không thành công"); window.location="index.php";</script>';
+            echo '<script>alert("Xác thực không thành công"); window.location="../Auth";</script>';
             exit;
         } else {
             if (!isset($_POST['username'])) {
                 die('');
             }
 
-            include('./Components/ketnoi.php');
+            include('../Components/ketnoi.php');
 
             header('Content-Type: text/html; charset=UTF-8');
 
@@ -27,7 +27,7 @@ if (isset($_POST['btn_submit'])) {
             $pass = addslashes($_POST['pass']);
 
             if (!$username || !$pass) {
-                echo '<script>alert("Vui lòng nhập đầy đủ thông tin"); window.location="index.php";</script>';
+                echo '<script>alert("Vui lòng nhập đầy đủ thông tin"); window.location="../Auth";</script>';
                 exit;
             }
 
@@ -53,9 +53,9 @@ if (isset($_POST['btn_submit'])) {
                 // echo $_SESSION['username'];
                 // Thực thi hành động sau khi lưu thông tin vào session
                 // ở đây mình tiến hành chuyển hướng trang web tới một trang gọi là index.php
-                echo '<script language="javascript">window.location="./TABHOME";</script>';
+                echo '<script language="javascript">window.location="../TABHOME";</script>';
             } else {
-                echo '<script language="javascript">alert("Tên đăng nhập hoặc mật khẩu không đúng"); window.location="index.php";</script>';
+                echo '<script language="javascript">alert("Tên đăng nhập hoặc mật khẩu không đúng"); window.location="../Auth";</script>';
             }
         }
     }

@@ -22,11 +22,11 @@
             <!-- Tabs content -->
             <div class="tab-content" id="ex3-content">
                 <div class="container mt-4">
-                    <form action="search.php" method="post">
+                    <form method="post">
                         <div class="mt-4 container mb-4">
                             <div class="row">
                                 <div class="col">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" name="category" aria-label="Default select example">
                                         <option value="0" selected>Chọn loại phòng</option>
                                         <?php
                                         $name1 = '';
@@ -46,16 +46,16 @@
                                 </div>
 
                                 <div class="col">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" name="address" aria-label="Default select example">
                                         <option value="0" selected>Chọn địa điểm</option>
                                         <?php
                                         $name2 = '';
-                                        $sql = "SELECT * FROM `motel`";
+                                        $sql = "SELECT * FROM `districts`";
                                         $result = $conn->query($sql);
                                         if ($result->num_rows > 0) {
                                             while ($row = $result->fetch_assoc()) {
                                                 $id = $row['ID'];
-                                                $name2 = $row['address'];
+                                                $name2 = $row['Name'];
                                         ?>
                                                 <option value="<?php echo $id ?>"><?php echo $name2 ?></option>
                                         <?php
@@ -66,7 +66,7 @@
                                 </div>
 
                                 <div class="col">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" name="price" aria-label="Default select example">
                                         <option value="0" selected>Chọn mức giá</option>
                                         <?php
                                         $name3 = 0;
@@ -77,7 +77,7 @@
                                                 $id = $row['ID'];
                                                 $name3 = $row['price'];
                                         ?>
-                                                <option value="<?php echo $id ?>"><?php echo $name3 ?></option>
+                                                <option value="<?php echo $name3 ?>"><?php echo $name3 ?></option>
                                         <?php
                                             }
                                         }
@@ -86,7 +86,7 @@
                                 </div>
 
                                 <div class="col">
-                                    <input type="submit" value="Lọc" class="btn btn-primary" style="z-index: 10;">
+                                    <input type="submit" name="filter" value="lọc" class="btn btn-primary" style="z-index: 10;">
                                 </div>
                             </div>
                         </div>
@@ -94,13 +94,31 @@
                     <h3 class="mb-4">Các phòng trọ được tìm thấy</h3>
                     <div class="row wrap">
                         <?php
-                        $text;
-                        if (!isset($_POST['search'])) {
-                            $text = '';
-                        } else {
-                            $text = addslashes($_POST['search']);
+                        $search = "";
+                        $text = "";
+                        $text = $_GET["search"];
+                        echo $text;
+                        if ($text) {
+                            $search = "( motel.title LIKE '%" . $text . "%') ";
                         }
-                        $sql = "SELECT motel.ID, motel.images, motel.title, user.Name, motel.created_at, motel.count_view, motel.address, motel.price FROM `motel` INNER JOIN `user` ON motel.user_id = user.ID INNER JOIN categories on motel.category_id = categories.ID INNER JOIN districts on motel.district_id = districts.ID WHERE( motel.address LIKE '%" . $name2 . "%') AND (categories.Name LIKE '%" . $name1 . "%') AND (motel.price > $name3)";
+                        if (isset($_POST['filter'])) {
+                            $name1 = (int)addslashes($_POST['category']);
+                            $name2 = addslashes($_POST['address']);
+                            $name3 = addslashes($_POST['price']);
+                            if ($name1) {
+                                $search = $search ? $search . "AND (motel.category_id = $name1) " : $search . "(motel.category_id = $name1) ";
+                            }
+                            if ($name2) {
+                                $search = $search ? $search . "AND ( motel.district_id = $name2) " : $search . "( motel.district_id = $name2) ";
+                            }
+                            if ($name3) {
+                                $search = $search ? $search . "AND (motel.price > $name3)" : $search . "(motel.price > $name3)";
+                            }
+                        }
+                        $sql = "SELECT motel.ID, motel.images, motel.title, user.Name, motel.created_at, motel.count_view, motel.address, motel.price FROM `motel` INNER JOIN `user` ON motel.user_id = user.ID INNER JOIN categories on motel.category_id = categories.ID INNER JOIN districts on motel.district_id = districts.ID";
+                        if ($search) {
+                            $sql .= " WHERE " . $search;
+                        }
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
