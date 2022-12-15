@@ -1,8 +1,9 @@
 <?php
 include('../Components/ketnoi.php');
 $username = "";
-if ($_COOKIE && $_COOKIE["username"])
+if ($_COOKIE && $_COOKIE["username"]) {
     $username = $_COOKIE["username"];
+}
 $name;
 $avatar;
 if ($username) {
