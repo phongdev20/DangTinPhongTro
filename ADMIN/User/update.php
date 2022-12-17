@@ -2,15 +2,12 @@
 include('../Components/ketnoi.php');
 $id = $_GET["id"];
 $user_name;
-$pass;
-$pass_old;
 $salt;
 $sql = "SELECT `UserName`, `Password`, `Salt` FROM `user` WHERE `ID` = '$id'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $user_name = $row['UserName'];
-    $pass = $row['Password'];
     $salt = $row['Salt'];
 } else {
     echo 'Khong co ban ghi nao';
@@ -20,24 +17,7 @@ if (isset($_POST["update"])) {
     $email = addslashes($_POST['email']);
     $phone = addslashes($_POST['phone']);
     $role = addslashes($_POST['role']);
-    $old_pass = addslashes($_POST['old_pass']);
-    $new_pass = addslashes($_POST['new_pass']);
     $avatar = "";
-    if ($new_pass) {
-        $pass_old = $old_pass . $salt;
-        $pass_old = md5($pass_old);
-        if ($pass !== $pass_old) {
-            echo '<script>alert("Nhập mật khẩu cũ không chính xác"); window.location="../../User";</script>';
-            exit;
-        }
-        if ($old_pass == $new_pass) {
-            echo '<script>alert("Mật khẩu cũ bị trùng với mật khẩu mới"); window.location="../../User";</script>';
-            exit;
-        }
-        $salt = strtotime("now");
-        $pass = $new_pass . $salt;
-        $pass = md5($pass);
-    }
     $avatar_path = addslashes($_FILES["avatar"]["name"]);
     $target_dir = "../../USER/Uploads/User/$user_name/";
     // Kiểm tra thư mục đã tồn tại hay chưa

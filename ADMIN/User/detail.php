@@ -80,27 +80,20 @@ $id = $_GET["id"]; ?>
 
                         <p>
                             <span class="font-weight-bold">
-                                Username
+                                Tên đăng nhập
                             </span>
                             <?php echo $user_name ?>
                         </p>
 
                         <p>
                             <span class="font-weight-bold">
-                                Password
-                            </span>
-                            <?php echo $pass ?>
-                        </p>
-
-                        <p>
-                            <span class="font-weight-bold">
-                                Name
+                                Tên
                             </span>
                             <?php echo $name ?>
                         </p>
                         <p>
                             <span class="font-weight-bold">
-                                Avatar
+                                Ảnh đại diện
                             </span>
                             <?php echo $avatar ?>
                         </p>
@@ -114,14 +107,14 @@ $id = $_GET["id"]; ?>
 
                         <p>
                             <span class="font-weight-bold">
-                                Phone
+                                Số điện thoại
                             </span>
                             <?php echo $phone ?>
                         </p>
 
                         <p>
                             <span class="font-weight-bold">
-                                Role
+                                Phân quyền
                             </span>
                             <?php echo $role ?>
                         </p>

@@ -47,7 +47,7 @@
                             <div class="row d-flex justify-content-center">
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <label for="user_name">Username</label>
+                                        <label for="user_name">Tên đăng nhập</label>
                                         <input type="text" id="user_name" name="user_name" value="" class="form-control">
                                     </div>
                                     <div class="form-group">
@@ -59,12 +59,12 @@
                                         <input type="text" id="re_pass" name="re_pass" value="" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="name">Name</label>
+                                        <label for="name">Tên</label>
                                         <input type="text" id="name" name="name" value="" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Avatar</label>
+                                        <label>Ảnh đại diện</label>
                                         <input name="avatar" type="file" class="form-control" />
                                     </div>
 
@@ -74,12 +74,12 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="phone">Phone</label>
+                                        <label for="phone">Điện thoại</label>
                                         <input type="text" id="phone" name="phone" value="" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="role">Role</label>
+                                        <label for="role">Phân quyền</label>
                                         <input type="number" id="role" name="role" value="" class="form-control">
                                     </div>
                                     <div class="form-group d-flex justify-content-end">

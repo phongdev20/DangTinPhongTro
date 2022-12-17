@@ -29,7 +29,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">STT</th>
-                                <th scope="col">Tiêu đề</th>
+                                <th scope="col">Tên phòng trọ</th>
                                 <th scope="col">Ảnh</th>
                                 <th scope="col">Ngày đăng</th>
                                 <th scope="col">Lượt xem</th>

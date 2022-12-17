@@ -73,16 +73,16 @@
                             <div class="row">
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <label for="title">Title</label>
+                                        <label for="title">Tên phòng trọ</label>
                                         <input type="text" id="title" name="title" value="<?php echo $title ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="description">Description</label>
+                                        <label for="description">Mô tả</label>
                                         <input type="text" id="description" name="description" value="<?php echo $description ?>" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="image">Image</label>
+                                        <label for="image">Hình ảnh</label>
                                         <div class="row w-100">
                                             <img class="img-fluid col-md-2" src="../../USER/Uploads/Motel/<?php echo $image ?>">
                                             <input name="image" type="file" value="<?php echo $image ?>" class="form-control col-10" />
@@ -90,39 +90,39 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="address">Address</label>
+                                        <label for="address">Địa chỉ</label>
                                         <input type="text" id="address" name="address" value="<?php echo $address ?>" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="latlng">Latlng</label>
+                                        <label for="latlng">Bản đồ</label>
                                         <input type="text" id="latlng" name="latlng" value="<?php echo $latlng ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="utilities">Utilities</label>
+                                        <label for="utilities">Tiện nghi</label>
                                         <input type="text" id="utilities" name="utilities" value="<?php echo $utilities ?>" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="price">Price</label>
+                                        <label for="price">Giá</label>
                                         <input type="number" id="price" name="price" value="<?php echo $price ?>" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="phone">Phone</label>
+                                        <label for="phone">Điện thoại</label>
                                         <input type="text" id="phone" name="phone" value="<?php echo $phone ?>" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="approve">Approve</label>
+                                        <label for="approve">Xác nhận</label>
                                         <select class="form-select form-control" name="approve" id="approve">
                                             <option value="0" <?php if ($approve == 0) echo 'selected' ?>>0</option>
                                             <option value="1" <?php if ($approve == 1) echo 'selected' ?>>1</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="category">Category</label>
+                                        <label for="category">Loại phòng</label>
                                         <select class="form-select form-control" name="category" id="category">
                                             <option value="0" selected>-- Chọn loại phòng --</option>
                                             <?php
@@ -141,7 +141,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="district">District</label>
+                                        <label for="district">Quận, huyện</label>
                                         <select class="form-select form-control" name="district" id="district">
                                             <option value="0" selected>-- Chọn vị trí --</option>
                                             <?php
@@ -161,7 +161,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="status">Status</label>
+                                        <label for="status">Trạng thái</label>
                                         <select class="form-select form-control" name="status" id="status">
                                             <option value="1" <?php if ($status == 1) echo 'selected' ?>>1</option>
                                             <option value="2" <?php if ($status == 2) echo 'selected' ?>>2</option>

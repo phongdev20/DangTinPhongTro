@@ -29,7 +29,7 @@ $id = $_GET["id"]; ?>
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="text-uppercase">chi tiết người dùng</h1>
+                            <h1 class="text-uppercase">chi tiết phòng trọ</h1>
                         </div>
                         <div class="col-sm-6">
                             <p class="breadcrumb float-sm-right">
@@ -94,54 +94,54 @@ $id = $_GET["id"]; ?>
 
                         <p>
                             <span class="font-weight-bold">
-                                Title
+                                Tên phòng trọ
                             </span>
                             <?php echo $title ?>
                         </p>
 
                         <p>
                             <span class="font-weight-bold">
-                                Description
+                                Mô tả
                             </span>
                             <?php echo $description ?>
                         </p>
 
                         <p>
                             <span class="font-weight-bold">
-                                Price
+                                Giá
                             </span>
                             <?php echo $price ?>
                         </p>
                         <p>
                             <span class="font-weight-bold">
-                                Image
+                                Hình ảnh
                             </span>
                             <?php echo $image ?>
                         </p>
 
                         <p>
                             <span class="font-weight-bold">
-                                Address
+                                Địa chỉ
                             </span>
                             <?php echo $address ?>
                         </p>
 
                         <p>
                             <span class="font-weight-bold">
-                                Latlng
+                                Bản đồ
                             </span>
                             <?php echo $latlng ?>
                         </p>
 
                         <p>
                             <span class="font-weight-bold">
-                                Utilities
+                                Tiện nghi
                             </span>
                             <?php echo $utilities ?>
                         </p>
                         <p>
                             <span class="font-weight-bold">
-                                Approve
+                                Xác nhận
                             </span>
                             <?php echo $approve ?>
                         </p>
@@ -177,7 +177,7 @@ $id = $_GET["id"]; ?>
                         </p>
                         <p>
                             <span class="font-weight-bold">
-                                Status
+                                Trạng thái
                             </span>
                             <?php echo $status ?>
                         </p>

@@ -97,7 +97,6 @@
                         $search = "";
                         $text = "";
                         $text = $_GET["search"];
-                        echo $text;
                         if ($text) {
                             $search = "( motel.title LIKE '%" . $text . "%') ";
                         }

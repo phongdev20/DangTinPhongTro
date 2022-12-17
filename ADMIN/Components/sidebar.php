@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 100vh; height: 100%; position: fixed; top: 0; bottom: 0;">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="#" class="brand-link">
         <img src="../../USER/Uploads/User/<?php echo $username ?>/<?php echo $avatar ?>" alt="<?php echo $name  ?>" class="brand-image img-circle" style="width:35px;height:35px;">
         <span class="brand-text font-weight-light"><?php echo $name  ?></span>
     </a>

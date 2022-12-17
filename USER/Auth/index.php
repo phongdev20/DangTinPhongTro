@@ -109,7 +109,7 @@
                         <td colspan="2" align="center">
                             <div class="boxRegister">
                                 <h4>Nếu bạn chưa có tài khoản. Mời bạn nhấn vào </h4>
-                                <a href="./Register" style="text-decoration: none; margin-left: 4px; margin-right: 4px;">Đăng ký</a>
+                                <a href="../Register" style="text-decoration: none; margin-left: 4px; margin-right: 4px;">Đăng ký</a>
                                 <h4>để đăng ký</h4>
                             </div>
                         </td>

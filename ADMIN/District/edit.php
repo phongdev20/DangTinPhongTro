@@ -58,7 +58,7 @@
                             <div class="row d-flex justify-content-center">
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <label for="name">Name</label>
+                                        <label for="name">Tên</label>
                                         <input type="text" id="name" name="name" value="<?php echo $name ?>" class="form-control">
                                     </div>
                                     <div class="form-group d-flex justify-content-end">

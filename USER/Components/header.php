@@ -1,7 +1,7 @@
 <?php
 include('../Components/ketnoi.php');
 $username = "";
-if ($_COOKIE && $_COOKIE["username"]) {
+if (isset($_COOKIE["username"])) {
     $username = $_COOKIE["username"];
 }
 $name;
@@ -48,9 +48,9 @@ if ($username) {
                 </li>
             </ul>
             <!-- Left links -->
-            <form class="d-flex" action="../TABHOME/search.php" method="post">
+            <form class="d-flex" action="../TABHOME/search.php">
                 <input name="search" class="form-control me-2" type="search" placeholder="Nhập từ khoá" aria-label="Search">
-                <button name="submit" class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
         <!-- Collapsible wrapper -->

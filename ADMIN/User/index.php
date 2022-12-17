@@ -49,22 +49,22 @@
                         <table class="table" id="myTable">
                             <tr>
                                 <th>
-                                    Name
+                                    Tên
                                 </th>
                                 <th>
-                                    Username
+                                    Tên đăng nhập
                                 </th>
                                 <th style="width:100px">
-                                    Avatar
+                                    Ảnh đại diện
                                 </th>
                                 <th>
                                     Email
                                 </th>
                                 <th>
-                                    Phone
+                                    Điện thoại
                                 </th>
                                 <th>
-                                    Role
+                                    Phân quyền
                                 </th>
                                 <th class="text-center" style="width: 180px">Chức năng</th>
                             </tr>

@@ -49,25 +49,25 @@
                         <table class="table" id="myTable">
                             <tr>
                                 <th>
-                                    Title
+                                    Tên phòng trọ
                                 </th>
                                 <th>
-                                    Description
+                                    Mô tả
                                 </th>
                                 <th>
-                                    Price
+                                    Giá
                                 </th>
                                 <th style="width: 100px">
-                                    Images
+                                    Hình ảnh
                                 </th>
                                 <th>
-                                    Utilities
+                                    Tiện nghi
                                 </th>
                                 <th>
-                                    Phone
+                                    Điện thoại
                                 </th>
                                 <th>
-                                    Approve
+                                    Xác nhận
                                 </th>
                                 <th class="text-center" style="width: 180px">Chức năng</th>
                             </tr>

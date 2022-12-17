@@ -3,6 +3,7 @@ include('../Components/ketnoi.php');
 $user_name_cookie = $_COOKIE["username"];
 $user_name;
 $pass = "";
+$re_pass = "";
 $pass_old = "";
 $salt;
 $avatar;
@@ -23,6 +24,7 @@ if (isset($_POST["update"]) && $_POST["update"]) {
     $phone = addslashes($_POST['phone']);
     $old_pass = addslashes($_POST['old_pass']);
     $new_pass = addslashes($_POST['new_pass']);
+    $re_pass = addslashes($_POST['re_pass']);
     $avatar_path = addslashes($_FILES["avatar"]["name"]);
     $target_dir = "../Uploads/User/$user_name_cookie/";
     // Kiểm tra thư mục đã tồn tại hay chưa
@@ -43,6 +45,10 @@ if (isset($_POST["update"]) && $_POST["update"]) {
         $pass_old = md5($pass_old);
         if ($pass !== $pass_old) {
             echo '<script>alert("Nhập mật khẩu cũ không chính xác"); window.location="index.php";</script>';
+            exit;
+        }
+        if ($pass !== $re_pass) {
+            echo '<script>alert("Nhập lại mật khẩu không đúng"); window.location="index.php";</script>';
             exit;
         }
         if ($old_pass == $new_pass) {

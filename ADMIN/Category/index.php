@@ -52,7 +52,7 @@
                                     ID
                                 </th>
                                 <th>
-                                    Name
+                                    Tên
                                 </th>
                                 <th class="text-center" style="width: 180px">Chức năng</th>
                             </tr>

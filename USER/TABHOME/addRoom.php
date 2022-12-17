@@ -26,53 +26,53 @@
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="form-group">
-                                    <label for="title">Title</label>
+                                    <label for="title">Tên phòng trọ</label>
                                     <input type="text" id="title" name="title" value="" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="description">Description</label>
+                                    <label for="description">Mô tả</label>
                                     <input type="text" id="description" name="description" value="" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="image">Images</label>
+                                    <label for="image">Hình ảnh</label>
                                     <input name="image" type="file" class="form-control" />
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="address">Address</label>
+                                    <label for="address">Địa chỉ</label>
                                     <input type="text" id="address" name="address" value="" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="latlng">Latlng</label>
+                                    <label for="latlng">Bản đồ</label>
                                     <input type="text" id="latlng" name="latlng" value="" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="utilities">Utilities</label>
+                                    <label for="utilities">Tiện nghi</label>
                                     <input type="text" id="utilities" name="utilities" value="" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="price">Price</label>
+                                    <label for="price">Giá</label>
                                     <input type="number" id="price" name="price" value="" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="phone">Phone</label>
+                                    <label for="phone">Điện thoại</label>
                                     <input type="text" id="phone" name="phone" value="" class="form-control">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="approve">Approve</label>
+                                    <label for="approve">Xác nhận</label>
                                     <select class="form-select form-control" name="approve" id="approve">
                                         <option value="0" selected>0</option>
                                         <option value="1">1</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="category">Category</label>
+                                    <label for="category">Loại phòng</label>
                                     <select class="form-select form-control" name="category" id="category">
                                         <option value="0" selected>-- Chọn loại phòng --</option>
                                         <?php
@@ -91,7 +91,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="district">District</label>
+                                    <label for="district">Quận, huyện</label>
                                     <select class="form-select form-control" name="district" id="district">
                                         <option value="0" selected>-- Chọn vị trí --</option>
                                         <?php
@@ -111,7 +111,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="status">Status</label>
+                                    <label for="status">Trạng thái</label>
                                     <select class="form-select form-control" name="status" id="status">
                                         <option value="1">1</option>
                                         <option value="2" selected>2</option>
